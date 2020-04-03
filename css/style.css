@@ -45,7 +45,10 @@ body	{
 	background-color: white;
 	left: -3px;
 	bottom:-3px;
-	z-index: 5
+	z-index: 5;
+	cursor: pointer;
+
+
 }
 .read {
 	position: absolute;
@@ -65,20 +68,55 @@ body	{
 .green {
 	position: absolute;
 	background-color: green;
-	width: 250px;
-	height: 250px;
+	width: 300px;
+	height: 300px;
 	top:50%;
 	left:50%;
 	transform: translate(-50%,-50%);
-
+	transition: all 0.5s linear 1s; 
+	cursor: pointer;
+	animation: myanimation 3s infinite;
 }
 
 .text-green {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%)rotate(45deg);
 	color: yellow;
 	text-transform: uppercase;
-	font-size: 24px;
+	font-size: 38px;
+	white-space: nowrap;
+	/*transition: all 0.5s linear 1s;*/
+	animation: myanimation1 3s infinite;
 }
+.white-box:hover .green {
+	background-color: pink;
+	
+}
+
+.white-box:hover .text-green {
+	color: red;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%)rotate(0deg);
+
+}
+
+.nav-a:hover {
+	color:red;
+	opacity: 0.5;
+	cursor:pointer;
+	transition: all 0.5s linear 0.2s;
+}
+
+/*Keyframes*/
+
+@keyframes myanimation {
+	from {top;background-color: green;transform: translate(-50%,-50%)rotate(360deg);}
+	to {bottom;background-color: black; transform: translate(-50%,-50%)  }
+}
+
+@keyframes myanimation1 {
+	from {background-color: grey;transform: translate(-50%,-50%)rotate(30deg);}
+	to {background-color: orange; transform: translate(-50%,-50%)  }
